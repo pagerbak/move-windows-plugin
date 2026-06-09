@@ -1,0 +1,40 @@
+<!--
+Copyright 2026 Per Agerbæk
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<idea-plugin>
+    <id>dk.utilis.movewindows</id>
+    <name>Move All Windows to Display</name>
+    <vendor email="pagerbak@gmail.com">Per Agerbæk</vendor>
+
+    <description><![CDATA[
+        Moves all open IntelliJ project windows (and detached tool windows)
+        to a display you pick from a visual map of your monitor arrangement.
+        Handy when docking/undocking a Mac laptop scatters your windows onto
+        the built-in screen.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action id="dk.utilis.movewindows.MoveAll"
+                class="dk.utilis.movewindows.MoveAllWindowsAction"
+                text="Move All Windows to Display…"
+                description="Move all open windows to a chosen monitor">
+            <add-to-group group-id="WindowMenu" anchor="last"/>
+            <!-- Change this if it clashes with an existing binding. -->
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt shift M"/>
+        </action>
+    </actions>
+</idea-plugin>
